@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+.animation {
+    margin: 100px auto 0;
+    width: 400px;
+}
+
+.car {
+    animation: car 0.2s linear infinite;
+    position: relative;
+    top: 0;
+}
+
+.car-windscreen {
+    border: solid 10px #1e90ff;
+    border-bottom: solid 1px white;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 90px;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: perspective(10px) rotateX(1deg);
+    width: 300px;
+}
+
+.car:before,
+.car:after {
+    background: #1e90ff;
+    bottom: 5px;
+    content: '';
+    height: 25px;
+    position: absolute;
+    top: 60px;
+    width: 30px;
+}
+
+.car:before {
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 10px;
+    left: 15px;
+}
+
+.car:after {
+    border-bottom-right-radius: 20%;
+    border-top-right-radius: 10px;
+    right: 15px;
+}
+
+.steering-wheel {
+    animation: steering 2s linear infinite;
+    border-left: solid 12px #888;
+    border-right: solid 12px #888;
+    border-top: solid 12px black;
+    border-radius: 50%;
+    height: 76px;
+    margin: 50px 0 0 20px;
+    transform: rotateX(-1deg);
+    transform-style: preserve-3d;
+    width: 80px;
+}
+
+.car-body {
+    background: #1e90ff;
+    border-bottom: solid 3px white;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    height: 140px;
+    margin: 0 auto;
+    padding-top: 100px;
+    position: relative;
+    width: 400px;
+    z-index: 5;
+}
+
+.car-body:before,
+.car-body:after {
+  background: #ffc;
+  border-radius: 50%;
+  bottom: 50px;
+  box-shadow: 0 0 50px 10px #ffc;
+  content: '';
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+
+.car-body:before {
+    left: 20px;
+}
+
+.car-body:after {
+    right: 20px;
+}
+
+.number-plate {
+    background: white;
+    border-radius: 10px;
+    height: 20px;
+    margin: 0 auto;
+    width: 120px;
+}
+
+.wheels {
+    animation: wheels 0.2s linear infinite;
+    background-color: #1d1d1d;
+    background-image: linear-gradient(to right, #1d1d1d, #1d1d1d 24%, #888 24%, #888 28%, #1d1d1d 28%, #1d1d1d 48%, #888 48%, #888 52%, #1d1d1d 52%, #1d1d1d 72%, #888 72%, #888 76%, #1d1d1d 76%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 60px;
+    margin-bottom: 25px;
+    margin-top: -25px;
+    width: 70px;
+}
+
+#left-wheel {
+    float: left;
+    margin-left: 15px;
+}
+
+#right-wheel {
+    float: right;
+    margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+    .animation {
+        width: 266px;
+    }
+
+    .car {
+        top: -1px;
+    }
+
+    .car-windscreen {
+        border-top-left-radius: 33px;
+        border-top-right-radius: 33px;
+        height: 60px;
+        width: 200px;
+    }
+
+    .car:before,
+    .car:after {
+        bottom: 3px;
+        height: 17px;
+        top: 40px;
+        width: 23px;
+    }
+
+    .car:before {
+        border-top-left-radius: 7px;
+        left: 8px;
+    }
+
+    .car:after {
+        border-top-right-radius: 7px;
+        right: 8px;
+    }
+
+    .steering-wheel {
+        border-left: solid 8px gray;
+        border-right: solid 8px gray;
+        border-top: solid 8px black;
+        height: 50px;
+        margin: 33px 0 0 13px;
+        width: 54px;
+    }
+
+    .car-body {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        height: 93px;
+        padding-top: 66px;
+        width: 266px;
+    }
+
+    .car-body:before,
+    .car-body:after {
+        bottom: 33px;
+        height: 33px;
+        width: 33px;
+    }
+
+    .car-body:before {
+        left: 13px;
+    }
+
+    .car-body:after {
+        right: 13px;
+    }
+
+    .number-plate {
+        height: 13px;
+        width: 80px;
+    }
+
+    .wheels {
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+        height: 40px;
+        margin-top: -17px;
+        width: 46px;
+    }
+
+    #left-wheel {
+        margin-left: 10px;
+    }
+
+    #right-wheel {
+        margin-right: 10px;
+    }
+}
+
+@keyframes car {
+    100% {
+        top: 2px;
+    }
+}
+
+@keyframes wheels {
+    100% {
+        background-image: linear-gradient(to right, black, black 29%, #888 29%, #888 33%, black 33%, black 48%, #888 48%, #888 52%, black 52%, black 67%, #888 67%, #888 71%, black 71%);
+    }
+}
+
+@keyframes steering {
+    25% {
+        transform: rotateX(-1deg) rotateZ(-10deg);
+    }
+
+    50% {
+        transform: rotateX(-1deg) rotateZ(0deg);
+    }
+
+    75% {
+        transform: rotateX(-1deg) rotateZ(10deg);
+    }
+
+    100% {
+        transform: rotateX(-1deg) rotateZ(0deg);
+    }
+}
