@@ -14,6 +14,7 @@
 }
 
 .car-windscreen {
+    background: rgba(0,75,150,0.1);
     border: solid 10px #1e90ff;
     border-bottom: solid 1px white;
     border-top-left-radius: 50px;
